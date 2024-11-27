@@ -5,46 +5,48 @@
     byte1 db ?
     byte2 db ?
 
-    fname1 db 128 dup('$')
+    fname1 db 13 dup(?)
     fname2 db 128 dup('$')
     
     newline db 10, 13, "$"
+
+    pos db 0
 
 .code
 
 start:
     mov ax, @data
-    mov ds, ax
+    mov es, ax
 
-    mov ah, 62h
-    int 21h
-    mov bx, dx
+    mov si, 82h
+    ;inc si
+;;;skip empty symbols
 
 
     lea di, fname1
-    mov es, bx
-    mov si, 82h
-    inc si
 incrementer:
-    mov al, es:[si]
-    mov [di], al
-
-    
-buf1:
-    
-    inc si
-    inc di
-
-    mov al, es:[si]
-
+    lodsb
     cmp al, 0dh
-    je ende
+    je _continue
     cmp al, ' '
-    jne incrementer
+    je _continue
+    cmp pos, 11
+    ja _error
+    stosb
+    inc pos
+    jmp incrementer
+_continue:
+    mov es:[di], 0
 
-    lea di, fname2
-incrementer2:
-    mov di, es:[si]
+
+
+    mov ax, @data
+    mov ds, ax
+    mov ah, 040h
+    mov cx, 13
+    mov bx, 1
+    mov dx, offset fname1
+
 
 
 buf2:
@@ -73,4 +75,10 @@ print_buffer:
 ende:
     mov ax, 4C00h
     int 21h
+
+
+_error:
+    mov ax, 4C01h
+    int 21h
+
 end start
