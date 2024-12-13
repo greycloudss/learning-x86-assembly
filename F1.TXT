@@ -1,1 +1,84 @@
-Apart from counting words and characters, our online editor can help you to improve word choice and writing style, and, optionally, help you to detect grammar mistakes and plagiarism. To check word count, simply place your cursor into the text box above and start typing. You'll see the number of characters and words increase or decrease as you type, delete, and edit them. You can also copy and paste text from another program over into the online editor above. The Auto-Save feature will make sure you won't lose any changes while editing, even if you leave the site and come back later. Tip: Bookmark this page now.Apart from counting words and characters, our online editor can help you to improve word choice and writing style, and, optionally, help you to detect grammar mistakes and plagiarism. To check word count, simply place your cursor into the text box above and start typing. You'll see the number of characters and words increase or decrease as you type, delete, and edit them. You can also copy and paste text from another program over into the online editor above. The Auto-Save feature will make sure you won't lose any changes while editing, even if you leave the site and come back later. Tip: Bookmark this page now.
+Simplify and accelerate coding workflows across Python, Java, C, C++, Go, JavaScript, TypeScript and more.
+Empower your development team
+IBM watsonx Code Assistant™ leverages Granite models to augment developer skill sets, simplifying and automating your development and modernization efforts.
+
+
+
+Generate
+
+
+Complete
+
+
+Explain
+
+
+Test
+
+
+Transform
+
+
+Document
+
+Speak plainly, build quickly
+
+Write high-quality code aligned with established conventions using simple, natural language prompts - regardless of your experience level.
+
+
+Code generation capability of watsonx Code Assistant that displays a dialog screen offering the user a recommendation to create a quicksort algorithm in Python (0:10)
+Infuse the entire application lifecycle with AI
+Illustration for software development use case
+Software development
+Get a head start on design
+
+Whether generating original code or refactoring existing assets, watsonx Code Assistant delivers vetted, targeted coding recommendations directly in your IDE.
+
+ Illustration of code validation use case
+Code validation  
+Offload the repetition
+
+
+Standardize, streamline and automate the recurring management and support tasks needed for every new—or altered—line of source code.
+
+
+ 
+
+Illustration for Java code upgrade use case
+Java code upgrades
+Don’t get left behind
+
+
+Keep pace with the latest version of Java, capitalizing on artificial intelligence to identify gaps and automatically apply the fixes needed to update your codebase.
+
+
+ 
+
+Illustration for java runtime modernization use case
+Java runtime modernization  
+Breathe new life into current assets
+
+From monoliths to microservices, leverage AI-powered insight and built-in visualization tools to accelerate your transition to a more lightweight, flexible and efficient runtime.
+
+Results from real developers
+Developer teams improved workflows, modernized applications, and cut down on time by using watsonx Code Assistant. Learn how they boosted efficiency while maintaining quality.
+
+90%
+ time savings on code explanation for one team
+
+Explore the case study 
+80%
+of legacy Java code transformed automatically
+
+Explore the case study 
+59%
+average time savings on code documentation
+
+Explore the case study 
+Discover the pricing plans for watsonx Code Assistant now!
+
+Explore the options and choose the one that works for you.
+
+See pricing options
+
+Related products
