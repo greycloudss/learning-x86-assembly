@@ -1,6 +1,8 @@
 .model small
 .stack 100h
 
+JUMPS
+
 BUFF_SIZE = 10
 
 .data
@@ -47,7 +49,7 @@ incrementer:
     cmp al, ' '
     je continue_fname1
     cmp pos, 11  
-    ja err_label_labely_labelest
+    ja errr
     stosb
     inc byte1 
     inc pos
@@ -70,9 +72,6 @@ incrementer1:
     inc pos
     jmp incrementer1
 
-err_label_labely_labelest:
-    jmp err_label
-
 continue_fname2:
     mov byte ptr es:[di], 0
     mov ax, @data
@@ -83,7 +82,7 @@ fopen1:
     mov al, 0
     lea dx, fname1
     int 21h
-    jc errjmp
+    jc errr
     mov fhandle1, ax
 
 fopen2:
@@ -91,7 +90,7 @@ fopen2:
     mov al, 0
     lea dx, fname2
     int 21h
-    jc errjmp
+    jc errr
     mov fhandle2, ax
 
 read_files:
@@ -103,13 +102,13 @@ read_files:
     mov dx, word ptr dabar_analizuoja_pos
     mov bx, fhandle1
     int 21h
-    jc errjmp
+    jc errr
     mov ah, 3Fh
     mov bx, fhandle1
     lea dx, fbuff1
     mov cx, BUFF_SIZE
     int 21h
-    jc errjmp
+    jc errr
     mov fbuff1_sym, ax
     cmp fbuff1_sym,0
     jne noend1
@@ -128,8 +127,6 @@ skip_read1:
     jne done1
     mov fbuff1_sym, BUFF_SIZE
     jmp done1
-errjmp:
-    jmp errlvl
 done1:
 
     cmp ended2,0
@@ -140,13 +137,13 @@ done1:
     mov dx, word ptr dabar_analizuoja_pos
     mov bx, fhandle2
     int 21h
-    jc errlvl
+    jc errr
     mov ah, 3Fh
     mov bx, fhandle2
     lea dx, fbuff2
     mov cx, BUFF_SIZE
     int 21h
-    jc errlvl
+    jc errr
     mov fbuff2_sym, ax
     cmp fbuff2_sym,0
     jne noend2
@@ -175,12 +172,7 @@ done2:
 c1:
     mov si,0
     mov di,0
-    jmp process_buffers
 
-process_buffers:
-    jmp compare_buffers
-errlvl:
-    jmp errr
 compare_buffers:
     cmp si, fbuff1_sym
     jae read_more_data
@@ -216,8 +208,7 @@ no_mismatch:
     inc di
     inc word ptr dabar_analizuoja_pos
     jmp compare_buffers
-erra:
-    jmp errr
+
 read_more_data:
     cmp si, fbuff1_sym
     jae more_f1
@@ -226,20 +217,17 @@ read_more_data:
     jmp compare_buffers
 
 more_f1:
-    cmp ended1,1
+    cmp ended1, 1
     je more_f2
     jmp read_files_label
 
 more_f2:
-    cmp ended2,1
+    cmp ended2, 1
     je fclose_all
     jmp read_files_label
 
 read_files_label:
     jmp read_files
-
-err_label:
-    jmp errr
 
 errr:
     lea dx, error_msg
@@ -276,5 +264,4 @@ convert_loop:
     inc si
     ret
 dw_to_string endp
-
 end start
